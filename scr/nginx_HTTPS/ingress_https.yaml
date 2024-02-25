@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-https
+  namespace: dz2-3
+spec:
+  rules:
+    - host: my-app.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: service-https
+                port:
+                  number: 80
+
+  tls:
+    - hosts:
+      - my-app.com
+      secretName: secret-tls

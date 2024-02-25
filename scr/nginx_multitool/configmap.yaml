@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-nginx-multitool
+  namespace: dz2-3
+data:
+  HTTP-PORT: "8080"
+  index.html: |
+    <html>
+    <h1>Welcome</h1>
+    </br>
+    <h1>This is a configMap Index file</h1>
+    </html>
